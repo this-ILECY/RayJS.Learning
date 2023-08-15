@@ -1,36 +1,31 @@
+import { of } from 'rxjs';
 import './style.css';
-
 /*
-Consider the following dataset of stock prices:
-*/
+Here are some sample data titles:
 
-const stockPrices = [
-  { timestamp: 0, price: 100 },
-  { timestamp: 1, price: 105 },
-  { timestamp: 2, price: 98 },
-  { timestamp: 3, price: 110 },
-  { timestamp: 4, price: 95 },
-];
+1. The Great Gatsby
+2. Pride and Prejudice
+3. To Kill a Mockingbird
+4. 1984
+5. The Catcher in the Rye
 
-/*
+Now, let's create an exercise based on these titles:
+
 Exercise:
-Using the provided dataset of stock prices, create a query that calculates the cumulative return over time. The cumulative return is calculated as the percentage change in price from the initial timestamp to the current timestamp.
-
-To accomplish this exercise, you need to:
-
-1. Use either the `interval` or `timer` operator to emit the stock prices over a specified time interval.
-1. Use either the `reduce` or `scan` operator to calculate the cumulative return at each timestamp.
+Using the provided list of book titles, create a query that filters out the titles starting with the letter 'T' and transforms the remaining titles to uppercase.
 
 Here's a code template to get you started:
 */
 
-import { interval, of } from 'rxjs';
-import { reduce, scan } from 'rxjs/operators';
+const titles$ = of(
+  'The Great Gatsby',
+  'Pride and Prejudice',
+  'To Kill a Mockingbird',
+  '1984',
+  'The Catcher in the Rye'
+);
 
-const stockPrices$ = of();
-// Insert the stock prices object here
-
-stockPrices$
+titles$
   .pipe
   // Add your operators here
   ()
@@ -39,5 +34,5 @@ stockPrices$
   });
 
 /*
-Your task is to fill in the missing parts by applying the appropriate operators to achieve the desired transformation. Once you've completed the exercise, please provide your solution by sharing the modified code.
+Your task is to fill in the missing operators to achieve the desired transformation. Once you've completed the exercise, please provide your solution by sharing the modified code.
 */
