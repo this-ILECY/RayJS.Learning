@@ -1,36 +1,54 @@
+import { of } from 'rxjs';
 import './style.css';
 
 /*
-Consider the following dataset of stock prices:
+Here's an object containing movie details:
 */
 
-const stockPrices = [
-  { timestamp: 0, price: 100 },
-  { timestamp: 1, price: 105 },
-  { timestamp: 2, price: 98 },
-  { timestamp: 3, price: 110 },
-  { timestamp: 4, price: 95 },
+const movies = [
+  {
+    title: 'The Shawshank Redemption',
+    genre: 'Drama',
+    year: 1994,
+    director: 'Frank Darabont',
+  },
+  {
+    title: 'The Godfather',
+    genre: 'Crime',
+    year: 1972,
+    director: 'Francis Ford Coppola',
+  },
+  {
+    title: 'Pulp Fiction',
+    genre: 'Crime',
+    year: 1994,
+    director: 'Quentin Tarantino',
+  },
+  {
+    title: 'The Dark Knight',
+    genre: 'Action',
+    year: 2008,
+    director: 'Christopher Nolan',
+  },
+  {
+    title: 'Fight Club',
+    genre: 'Drama',
+    year: 1999,
+    director: 'David Fincher',
+  },
 ];
 
 /*
 Exercise:
-Using the provided dataset of stock prices, create a query that calculates the cumulative return over time. The cumulative return is calculated as the percentage change in price from the initial timestamp to the current timestamp.
-
-To accomplish this exercise, you need to:
-
-1. Use either the `interval` or `timer` operator to emit the stock prices over a specified time interval.
-1. Use either the `reduce` or `scan` operator to calculate the cumulative return at each timestamp.
+Using the provided object of movie details, create a query that filters out the movies released before the year 2000 and transforms the remaining movies to display only the title and genre.
 
 Here's a code template to get you started:
 */
 
-import { interval, of } from 'rxjs';
-import { reduce, scan } from 'rxjs/operators';
+const movies$ = of();
+// Insert the movies object here
 
-const stockPrices$ = of();
-// Insert the stock prices object here
-
-stockPrices$
+movies$
   .pipe
   // Add your operators here
   ()
@@ -39,5 +57,5 @@ stockPrices$
   });
 
 /*
-Your task is to fill in the missing parts by applying the appropriate operators to achieve the desired transformation. Once you've completed the exercise, please provide your solution by sharing the modified code.
+Your task is to fill in the missing parts to achieve the desired transformation. Once you've completed the exercise, please provide your solution by sharing the modified code.
 */
